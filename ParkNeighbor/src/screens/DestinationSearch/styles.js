@@ -6,6 +6,7 @@ const styles = StyleSheet.create({
   },
   textInput: {
     fontSize: 20,
+    marginBottom: 20,
   },
   row: {
     flexDirection: 'row',
@@ -15,7 +16,10 @@ const styles = StyleSheet.create({
     borderColor: 'lightgrey',
   },
   iconContainer: {
-    
+    backgroundColor: '#e7e7e7',
+    padding: 7,
+    borderRadius: 10,
+    marginRight: 15,
   },
   locationText: {
 

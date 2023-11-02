@@ -26,7 +26,7 @@ const DestinationSearchScreen = (props) => {
         renderItem={({ item }) => (
           <View style={styles.row}>
             <View style={styles.iconContainer}>
-              <Entypo name={"location-pin"} size={35} />
+              <Entypo name={"location-pin"} size={30} />
             </View>
             <Text style={styles.locationText}>{item.description}</Text>
           </View>
