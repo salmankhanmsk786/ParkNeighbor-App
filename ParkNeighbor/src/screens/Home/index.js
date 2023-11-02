@@ -30,4 +30,4 @@ const HomeScreen = (props) => {
   )
 }
 
-export default HomeScreen
+export default HomeScreen;
