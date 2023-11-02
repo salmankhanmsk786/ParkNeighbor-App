@@ -16,8 +16,8 @@ const GuestsScreen = (props) => {
           <View>
             <View style={styles.row} >
               <View>
-                <Text style={{fontWeight: 'bold'}}>Adults</Text>
-                <Text style={{color: '#8d8d8d'}}>Ages 13 or above</Text>
+                <Text style={{fontWeight: 'bold'}}>How many hours?</Text>
+                <Text style={{color: '#8d8d8d'}}>Minimum 1 hour</Text>
               </View>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Pressable onPress={() => setAdults(Math.max(0 , adults - 1))}
@@ -36,8 +36,8 @@ const GuestsScreen = (props) => {
 
             <View style={styles.row} >
               <View>
-                <Text style={{fontWeight: 'bold'}}>Children</Text>
-                <Text style={{color: '#8d8d8d'}}>Ages 2 - 12</Text>
+                <Text style={{fontWeight: 'bold'}}>Need EV charging?</Text>
+                <Text style={{color: '#8d8d8d'}}>Check box if needed</Text>
               </View>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>
                 <Pressable onPress={() => setChildren(Math.max(0 , children - 1))}
@@ -56,7 +56,7 @@ const GuestsScreen = (props) => {
 
             <View style={styles.row} >
               <View>
-                <Text style={{fontWeight: 'bold'}}>Infants</Text>
+                <Text style={{fontWeight: 'bold'}}></Text>
                 <Text style={{color: '#8d8d8d'}}>Under 2</Text>
               </View>
               <View style={{flexDirection: 'row', alignItems: 'center'}}>

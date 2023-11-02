@@ -32,7 +32,7 @@ const Router = (props) => {
                 name={"Guests"}
                 component={GuestsScreen} 
                 options={{
-                  title: "How many people?"
+                  title: "Choose filters needed"
                 }}
               />
             </Stack.Navigator>
