@@ -9,6 +9,7 @@ import {
 import HomeScreen from './src/screens/Home';
 import SearchResultsScreen from './src/screens/SearchResults';
 import DestinationSearchScreen from './src/screens/DestinationSearch';
+import GuestsScreen from './src/screens/Guests';
 import Post from './src/components/Post'; //Import component post - aa
 
 import { ReactNode } from 'react';
@@ -32,9 +33,11 @@ const App = (): ReactNode => {
         <Post post={post3}/> */}
 
         {/* <SearchResultsScreen /> */}
+        
+        {/* <DestinationSearchScreen /> */}
 
-        <DestinationSearchScreen />
-
+        <GuestsScreen />
+        
       </SafeAreaView>
     </>
 
