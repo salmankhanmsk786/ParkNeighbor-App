@@ -8,15 +8,11 @@ import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplet
 
 const DestinationSearchScreen = (props) => {
 
-  const [inputText, setInputText] = useState('');
-
   const navigation = useNavigation();
 
   return (
     <View style={styles.container}>
       {/* Input component*/}
-
-      <View style={{height: 500}}>
         <GooglePlacesAutocomplete
           placeholder='Where are you going?'
           onPress={(data, details = null) => {
@@ -36,14 +32,6 @@ const DestinationSearchScreen = (props) => {
           suppressDefaultStyles
           renderRow={(item) => <SuggestionRow item={item} />}
         />
-      </View>
-
-      <TextInput
-        style={styles.textInput}
-        placeholder="Where are you going?"
-        value={inputText}
-        onChangeText={setInputText}
-      />
     </View>
   )
 }
