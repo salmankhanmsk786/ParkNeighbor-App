@@ -1,18 +1,20 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { View, Text } from "react-native";
-import MapView, {Marker, PROVIDER_GOOGLE} from 'react-native-maps';
+import MapView, { Marker, PROVIDER_GOOGLE } from 'react-native-maps';
 import CustomMarker from "../../components/CustomMarker";
+import PostCarouselItem from "../../components/PostCarouselItem";
 
 import places from '../../../assets/data/feed';
+import { FlatList } from "react-native-gesture-handler";
 
 const SearchResultsMaps = (props) => {
 
   const [selectedPlaceId, setSelectedPlaceId] = useState(null);
 
   return (
-    <View style={{width: '100%', height: '100%'}}>
+    <View style={{ width: '100%', height: '100%' }}>
       <MapView
-        style={{width: '100%', height: '100%'}}
+        style={{ width: '100%', height: '100%' }}
         provider={PROVIDER_GOOGLE}
         initialRegion={{
           latitude: 28.3279822,
@@ -30,6 +32,13 @@ const SearchResultsMaps = (props) => {
           />)
         )}
       </MapView>
+
+      <View style={{ position: 'absolute', bottom: 40}}>
+        <FlatList
+          data={places}
+          renderItem={({item}) => <PostCarouselItem post={item} />}
+        />
+      </View>
     </View>
   );
 }
