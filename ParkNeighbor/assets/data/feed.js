@@ -8,6 +8,10 @@ export default [
       oldPrice: 26,
       newPrice: 18,
       totalPrice: 22,
+      coordinate: {
+        latitude: 28.3915637,
+        longitude: -16.6291304,
+      },
     },
     {
       id: '1',
@@ -18,6 +22,10 @@ export default [
       oldPrice: 20,
       newPrice: 14,
       totalPrice: 18,
+      coordinate: {
+        latitude: 28.4815637,
+        longitude: -16.2291304,
+      },
     },
     {
       id: '2',
@@ -28,5 +36,9 @@ export default [
       oldPrice: 30,
       newPrice: 25,
       totalPrice: 30,
+      coordinate: {
+        latitude: 28.2515637,
+        longitude: -16.3991304,
+      },
     },
   ];
