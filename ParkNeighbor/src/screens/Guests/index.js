@@ -1,101 +1,83 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { View, Text, Pressable } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import Icon from 'react-native-vector-icons/FontAwesome';
 
 import styles from './styles.js';
 
 const GuestsScreen = (props) => {
-    const [adults, setAdults] = useState(0);
-    const [children, setChildren] = useState(0);
-    const [infants, setInfants] = useState(0);
+  const [hasHour, setHasHour] = useState(false);
+  const [needEvCharging, setNeedEvCharging] = useState(false);
+  const [isInfantIncluded, setIsInfantIncluded] = useState(false);
 
-    const navigation = useNavigation();
+  const navigation = useNavigation();
+
+  const toggleOption = (option) => {
+    switch (option) {
+      case 'hour':
+        setHasHour(!hasHour);
+        break;
+      case 'evCharging':
+        setNeedEvCharging(!needEvCharging);
+        break;
+      case 'infant':
+        setIsInfantIncluded(!isInfantIncluded);
+        break;
+      default:
+        break;
+    }
+  };
 
     return (
-        <View style={{justifyContent: 'space-between', height: '100%'}}>
-          <View>
-            <View style={styles.row} >
-              <View>
-                <Text style={{fontWeight: 'bold'}}>How many hours?</Text>
-                <Text style={{color: '#8d8d8d'}}>Minimum 1 hour</Text>
-              </View>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <Pressable onPress={() => setAdults(Math.max(0 , adults - 1))}
-                style={styles.button}
-                >
-                  <Text style={{fontSize: 20, color: '#474747'}}>-</Text>
-                </Pressable>
-                <Text style={{marginHorizontal: 20, fontSize: 16}}>{adults}</Text>
-                <Pressable onPress={() => setAdults(adults + 1)}
-                style={styles.button}
-                >
-                  <Text style={{fontSize: 20, color: '#474747'}}>+</Text>
-                </Pressable>
-              </View>
-            </View>
-
-            <View style={styles.row} >
-              <View>
-                <Text style={{fontWeight: 'bold'}}>Need EV charging?</Text>
-                <Text style={{color: '#8d8d8d'}}>Check box if needed</Text>
-              </View>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <Pressable onPress={() => setChildren(Math.max(0 , children - 1))}
-                style={styles.button}
-                >
-                  <Text style={{fontSize: 20, color: '#474747'}}>-</Text>
-                </Pressable>
-                <Text style={{marginHorizontal: 20, fontSize: 16}}>{children}</Text>
-                <Pressable onPress={() => setChildren(children + 1)}
-                style={styles.button}
-                >
-                  <Text style={{fontSize: 20, color: '#474747'}}>+</Text>
-                </Pressable>
-              </View>
-            </View>
-
-            <View style={styles.row} >
-              <View>
-                <Text style={{fontWeight: 'bold'}}></Text>
-                <Text style={{color: '#8d8d8d'}}>Under 2</Text>
-              </View>
-              <View style={{flexDirection: 'row', alignItems: 'center'}}>
-                <Pressable onPress={() => setInfants(Math.max(0 , infants - 1))}
-                style={styles.button}
-                >
-                  <Text style={{fontSize: 20, color: '#474747'}}>-</Text>
-                </Pressable>
-                <Text style={{marginHorizontal: 20, fontSize: 16}}>{infants}</Text>
-                <Pressable onPress={() => setInfants(infants + 1)}
-                style={styles.button}
-                >
-                  <Text style={{fontSize: 20, color: '#474747'}}>+</Text>
-                </Pressable>
-              </View>
-            </View>
+      <View style={{ justifyContent: 'space-between', height: '100%' }}>
+        <View>
+          <View style={styles.row} >
+            {/* Hour option */}
+            <Text style={{ fontWeight: 'bold' }}>Residental House</Text>
+            <Pressable onPress={() => toggleOption('hour')} style={styles.checkbox}>
+              {hasHour && <Icon name="check" size={20} color="#474747" />}
+            </Pressable>
           </View>
 
-            <Pressable
-              onPress={() => navigation.navigate('Home', {
-                screen: 'Explore',
-                params: {
-                  screen: 'SearchResults',
-                  },
-                })
-              }
-              style={{
-                marginBottom: 20,
-                backgroundColor: '#f15454',
-                alignItems: 'center',
-                justifyContent: 'center',
-                height: 50,
-                marginHorizontal: 20,
-                borderRadius: 10,}}>
-              <Text style={{fontSize: 20, color: 'white', fontWeight: 'bold'}}>Search</Text>
+          <View style={styles.row} >
+            {/* EV Charging option */}
+            <Text style={{ fontWeight: 'bold' }}>Complex Building</Text>
+            <Pressable onPress={() => toggleOption('evCharging')} style={styles.checkbox}>
+              {needEvCharging && <Icon name="check" size={20} color="#474747" />}
             </Pressable>
+          </View>
 
-        </View>
-    )
+          <View style={styles.row} >
+            {/* Infant option */}
+            <Text style={{ fontWeight: 'bold' }}>EV Charging</Text>
+            <Pressable onPress={() => toggleOption('infant')} style={styles.checkbox}>
+              {isInfantIncluded && <Icon name="check" size={20} color="#474747" />}
+            </Pressable>
+          </View>
+      </View>
+
+  <Pressable
+    onPress={() => navigation.navigate('Home', {
+      screen: 'Explore',
+      params: {
+        screen: 'SearchResults',
+      },
+    })
+    }
+    style={{
+      marginBottom: 20,
+      backgroundColor: '#f15454',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: 50,
+      marginHorizontal: 20,
+      borderRadius: 10,
+    }}>
+    <Text style={{ fontSize: 20, color: 'white', fontWeight: 'bold' }}>Search</Text>
+  </Pressable>
+
+    </View >
+  )
 }
 
 export default GuestsScreen;

@@ -8,16 +8,29 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     borderColor: '#676767',
     justifyContent: 'center',
-    alignItems: 'center', 
+    alignItems: 'center',
   },
-  row: { 
-    flexDirection: 'row', 
-    justifyContent: 'space-between', 
+  row: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
     paddingVertical: 20,
-    marginHorizontal: 20, 
-    borderBottomWidth: 1, 
+    marginHorizontal: 20,
+    borderBottomWidth: 1,
     borderColor: 'lightgrey',
-}
+  },
+  checkbox: {
+    width: 25,
+    height: 25,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderWidth: 1,
+    borderColor: '#474747',
+    borderRadius: 5,
+    backgroundColor: 'transparent',
+  },
+  checkboxSelected: {
+    backgroundColor: '#474747', // Color when checkbox is selected
+  },
 });
 
 export default styles;

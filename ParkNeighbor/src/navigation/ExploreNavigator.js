@@ -9,7 +9,6 @@ const Stack = createStackNavigator();
 const Router = (props) => {
   return (
     <Stack.Navigator>
-
       <Stack.Screen
         name={'Welcome'}
         component={HomeScreen}

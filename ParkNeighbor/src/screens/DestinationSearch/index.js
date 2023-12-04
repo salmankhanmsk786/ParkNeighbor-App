@@ -13,25 +13,25 @@ const DestinationSearchScreen = (props) => {
   return (
     <View style={styles.container}>
       {/* Input component*/}
-        <GooglePlacesAutocomplete
-          placeholder='Where are you going?'
-          onPress={(data, details = null) => {
-            // 'details' is provided when fetchDetails = true
-            console.log(data, details);
-            navigation.navigate('Guests');
-          }}
-          fetchDetails
-          styles={{
-            textInput: styles.textInput,
-          }}
-          query={{
-            key: 'AIzaSyBxsM19-JeKP0ZmDsXAkmFXB_AW0NIOTFs',
-            language: 'en',
-            types: '(cities)',
-          }}
-          suppressDefaultStyles
-          renderRow={(item) => <SuggestionRow item={item} />}
-        />
+      <GooglePlacesAutocomplete
+        placeholder='Where are you going?'
+        onPress={(data, details = null) => {
+          // 'details' is provided when fetchDetails = true
+          console.log(data, details);
+          navigation.navigate('Guests');
+        }}
+        fetchDetails
+        styles={{
+          textInput: styles.textInput,
+        }}
+        query={{
+          key: 'AIzaSyBxsM19-JeKP0ZmDsXAkmFXB_AW0NIOTFs',
+          language: 'en',
+          types: 'establishment',
+        }}
+        suppressDefaultStyles
+        renderRow={(item) => <SuggestionRow item={item} />}
+      />
     </View>
   )
 }

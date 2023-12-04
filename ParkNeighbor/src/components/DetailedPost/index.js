@@ -1,10 +1,12 @@
 import React from "react";
-import { View, Text, Image, ScrollView } from "react-native";
+import { View, Text, Image, ScrollView, Pressable } from "react-native";
 import styles from "./styles";
+import { useNavigation } from '@react-navigation/native';
 
 const Post = (props) => {
 
   const post = props.post;
+  const navigation = useNavigation();
 
   return (
     <ScrollView>
@@ -12,8 +14,7 @@ const Post = (props) => {
         {/* Image */}
         <Image
           style={styles.image}
-          source={{ uri: post.image }}
-        />
+          source={{ uri: post.image }} />
         {/* Parking Spot*/}
         <Text style={styles.parkingSpot}>{post.parkingSpot}</Text>
         {/* Type & Description */}
@@ -32,6 +33,11 @@ const Post = (props) => {
         <Text style={styles.longDescription}>
           {post.description}
         </Text>
+        <Pressable
+          onPress={() => navigation.navigate('Reservation')}
+          style={{ backgroundColor: 'blue', padding: 10, margin: 10, alignItems: 'center' }}>
+          <Text style={{ color: 'white', fontWeight: 'bold' }}>Reserve Parking Spot</Text>
+        </Pressable>
       </View>
     </ScrollView>
   )
