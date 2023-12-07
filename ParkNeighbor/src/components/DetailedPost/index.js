@@ -17,15 +17,16 @@ const Post = (props) => {
           source={{ uri: post.image }} />
         {/* Parking Spot*/}
         <Text style={styles.parkingSpot}>{post.parkingSpot}</Text>
+
+        <Text style={styles.address}>{post.address}</Text>
         {/* Type & Description */}
-        <Text style={styles.description} numberOfLines={2}>
+        <Text style={styles.description} numberOfLines={3}>
           {post.type}, {post.title}
         </Text>
         {/* Old price & new price */}
         <Text style={styles.prices}>
-          <Text style={styles.oldPrice}>${post.oldPrice} </Text>
-          <Text style={styles.price}>  ${post.newPrice} </Text>
-          / hour + fees
+          <Text style={styles.price}>${post.newPrice} </Text>
+          / hour
         </Text>
         {/* Total price */}
         <Text style={styles.totalPrice}>${post.totalPrice} total</Text>
@@ -34,8 +35,8 @@ const Post = (props) => {
           {post.description}
         </Text>
         <Pressable
-          onPress={() => navigation.navigate('Reservation')}
-          style={{ backgroundColor: 'blue', padding: 10, margin: 10, alignItems: 'center' }}>
+          onPress={() => navigation.navigate('Reservation', { post: post})}
+          style={styles.button}>
           <Text style={{ color: 'white', fontWeight: 'bold' }}>Reserve Parking Spot</Text>
         </Pressable>
       </View>
