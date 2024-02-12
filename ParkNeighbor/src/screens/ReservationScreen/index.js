@@ -17,6 +17,7 @@ const ReservationScreen = ({ route }) => {
         <Text style={styles.bodyText}>{post.type}</Text>
         <Text style={styles.bodyText}>Address: {post.address}</Text>
         <Text style={styles.bodyText}>Price per Hour: ${post.newPrice}</Text>
+        <Text style={styles.bodyText}>Service Fee: $1</Text>
         <Text style={styles.bodyText}>Total Price: ${post.totalPrice}</Text>
         {/* Include any other necessary details here */}
         <Pressable
