@@ -32,15 +32,15 @@ const GuestsScreen = (props) => {
       <View style={{ justifyContent: 'space-between', height: '100%' }}>
         <View>
           <View style={styles.row} >
-            {/* Hour option */}
-            <Text style={{ fontWeight: 'bold' }}>Residental House</Text>
+            {/* Residental house option */}
+            <Text style={{ fontWeight: 'bold' }}>Residental Houses</Text>
             <Pressable onPress={() => toggleOption('hour')} style={styles.checkbox}>
               {hasHour && <Icon name="check" size={20} color="#474747" />}
             </Pressable>
           </View>
 
           <View style={styles.row} >
-            {/* EV Charging option */}
+            {/* Complex Building option */}
             <Text style={{ fontWeight: 'bold' }}>Complex Building</Text>
             <Pressable onPress={() => toggleOption('evCharging')} style={styles.checkbox}>
               {needEvCharging && <Icon name="check" size={20} color="#474747" />}
@@ -48,12 +48,15 @@ const GuestsScreen = (props) => {
           </View>
 
           <View style={styles.row} >
-            {/* Infant option */}
+            {/* Ev Charging option */}
             <Text style={{ fontWeight: 'bold' }}>EV Charging</Text>
             <Pressable onPress={() => toggleOption('infant')} style={styles.checkbox}>
               {isInfantIncluded && <Icon name="check" size={20} color="#474747" />}
             </Pressable>
           </View>
+
+          {/* add more option here */}
+
       </View>
 
   <Pressable

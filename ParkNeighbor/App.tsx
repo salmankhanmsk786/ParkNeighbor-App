@@ -9,6 +9,10 @@ import Router from './src/navigation/Router';
 import HomeScreen from './src/screens/Home';
 import { ReactNode } from 'react';
 
+import {
+  withAuthenticator,
+} from '@aws-amplify/ui-react-native';
+
 const App = (): ReactNode => {
 
   return (
@@ -21,4 +25,4 @@ const App = (): ReactNode => {
 };
 
 
-export default App;
+export default withAuthenticator(App);
