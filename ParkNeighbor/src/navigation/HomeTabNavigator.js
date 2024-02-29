@@ -9,6 +9,9 @@ import AntDesign from 'react-native-vector-icons/FontAwesome5';
 import Feather from 'react-native-vector-icons/Feather';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import PostScreen from "../screens/PostScreen";
+import ProfileScreen from "../screens/ProfileScreen";
+import PrevOrders from "../screens/PrevOrders";
+import SavedPosts from "../screens/SavedPosts";
 
 const Tab = createBottomTabNavigator();
 
@@ -30,7 +33,7 @@ const HomeTabNavigator = (props) => {
       />
       <Tab.Screen
         name={'Saved'}
-        component={HomeScreen}
+        component={SavedPosts}
         options={{
           tabBarIcon: ({ color }) => (
             <FontAwesome name="heart-o" size={25} color={color} />
@@ -39,7 +42,7 @@ const HomeTabNavigator = (props) => {
       />
       <Tab.Screen
         name={'ParkNeighbor'}
-        component={HomeScreen}
+        component={PrevOrders}
         options={{
           tabBarIcon: ({ color }) => (
             <AntDesign name="car" size={25} color={color} />
@@ -57,7 +60,7 @@ const HomeTabNavigator = (props) => {
       />
       <Tab.Screen
         name={'Profile'}
-        component={HomeScreen}
+        component={ProfileScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <EvilIcons name="user" size={25} color={color} />
