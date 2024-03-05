@@ -6,6 +6,7 @@ import {
 
 import Router from './src/navigation/Router';
 
+
 import HomeScreen from './src/screens/Home';
 import { ReactNode } from 'react';
 

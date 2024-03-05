@@ -22,7 +22,6 @@ const Router = (props) => {
             headerShown: false
           }}
         />
-
         <Stack.Screen
           name={"Destination Search"}
           component={DestinationSearchScreen}
@@ -30,7 +29,6 @@ const Router = (props) => {
             title: "Search your destination"
           }}
         />
-
         <Stack.Screen
           name={"Guests"}
           component={GuestsScreen}
