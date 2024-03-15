@@ -7,22 +7,35 @@ import CalendarScreen from "../screens/CalendarScreen";
 import ListingScreen from "../screens/ListingScreen";
 import InboxScreen from "../screens/InboxScreen";
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Feather from 'react-native-vector-icons/Feather';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+
 
 const HostTab = createBottomTabNavigator();
 
 const HostTabNavigator = () => {
   return (
-    <HostTab.Navigator>
+    <HostTab.Navigator
+    screenOptions={{
+      activeTintColor: '#f15454',
+      headerShown: false,
+    }}>
       <HostTab.Screen 
         name="Dashboard" 
-        component={HostDashboardScreen} 
+        component={HostDashboardScreen}
+        options={{
+          tabBarIcon: ({ color }) => (
+            <MaterialIcons name="dashboard" size={25} color={color} />
+          ),
+        }}
         />
       <HostTab.Screen
         name={'Calendar'}
         component={CalendarScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <EvilIcons name="user" size={25} color={color} />
+            <AntDesign name="calendar" size={25} color={color} />
           ),
         }}
       />
@@ -31,7 +44,7 @@ const HostTabNavigator = () => {
         component={ListingScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <EvilIcons name="user" size={25} color={color} />
+            <MaterialIcons name="local-parking" size={25} color={color} />
           ),
         }}
       />
@@ -40,7 +53,7 @@ const HostTabNavigator = () => {
         component={InboxScreen}
         options={{
           tabBarIcon: ({ color }) => (
-            <EvilIcons name="user" size={25} color={color} />
+            <Feather name="message-square" size={25} color={color} />
           ),
         }}
       />
