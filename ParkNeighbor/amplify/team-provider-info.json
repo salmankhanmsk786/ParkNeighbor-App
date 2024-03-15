@@ -1,19 +1,19 @@
 {
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-parkneighbor-dev-202130-authRole",
-      "UnauthRoleArn": "arn:aws:iam::590183737932:role/amplify-parkneighbor-dev-202130-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::590183737932:role/amplify-parkneighbor-dev-202130-authRole",
+      "AuthRoleName": "amplify-parkneighbor-dev-01502-authRole",
+      "UnauthRoleArn": "arn:aws:iam::590183737932:role/amplify-parkneighbor-dev-01502-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::590183737932:role/amplify-parkneighbor-dev-01502-authRole",
       "Region": "us-west-1",
-      "DeploymentBucketName": "amplify-parkneighbor-dev-202130-deployment",
-      "UnauthRoleName": "amplify-parkneighbor-dev-202130-unauthRole",
-      "StackName": "amplify-parkneighbor-dev-202130",
-      "StackId": "arn:aws:cloudformation:us-west-1:590183737932:stack/amplify-parkneighbor-dev-202130/5a5add70-cede-11ee-b2ac-06530272c0e1",
-      "AmplifyAppId": "d35mqhpgjl2iis"
+      "DeploymentBucketName": "amplify-parkneighbor-dev-01502-deployment",
+      "UnauthRoleName": "amplify-parkneighbor-dev-01502-unauthRole",
+      "StackName": "amplify-parkneighbor-dev-01502",
+      "StackId": "arn:aws:cloudformation:us-west-1:590183737932:stack/amplify-parkneighbor-dev-01502/4da2b220-d9ff-11ee-9cb8-06ae9f382927",
+      "AmplifyAppId": "d34a893js0ku9b"
     },
     "categories": {
       "auth": {
-        "parkneighbor7e6b5d19": {}
+        "parkneighborcc03bba3": {}
       }
     }
   }

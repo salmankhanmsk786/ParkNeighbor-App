@@ -12,10 +12,12 @@ import PostScreen from "../screens/PostScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import PrevOrders from "../screens/PrevOrders";
 import SavedPosts from "../screens/SavedPosts";
+import MessageScreen from "../screens/MessagingScreen";
+import PaymentInfo from "../screens/PaymentInfo";
 
 const Tab = createBottomTabNavigator();
 
-const HomeTabNavigator = (props) => {
+const HomeTabNavigator = () => {
   return (
     <Tab.Navigator
       screenOptions={{
@@ -51,7 +53,7 @@ const HomeTabNavigator = (props) => {
       />
       <Tab.Screen
         name={'Messages'}
-        component={HomeScreen}
+        component={MessageScreen}
         options={{
           tabBarIcon: ({ color }) => (
             <Feather name="message-square" size={25} color={color} />
@@ -68,7 +70,7 @@ const HomeTabNavigator = (props) => {
         }}
       />
     </Tab.Navigator>
-  )
-}
+  );
+};
 
 export default HomeTabNavigator;

@@ -1,30 +1,19 @@
-import 'react-native-gesture-handler';
 import React from 'react';
-import {
-  StatusBar
-} from 'react-native';
-
+import { StatusBar } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { withAuthenticator } from '@aws-amplify/ui-react-native';
+import { UserModeProvider } from './src/navigation/UserModeContext';
 import Router from './src/navigation/Router';
 
-
-import HomeScreen from './src/screens/Home';
-import { ReactNode } from 'react';
-
-// import {
-//   withAuthenticator,
-// } from '@aws-amplify/ui-react-native';
-
-
-const App = (): ReactNode => {
-
+const App = () => {
   return (
-    <>
-      <StatusBar barStyle="dark-content" />
-      <Router />
-    </>
-
+    <UserModeProvider>
+      <NavigationContainer>
+        <StatusBar barStyle="dark-content" />
+        <Router />
+      </NavigationContainer>
+    </UserModeProvider>
   );
 };
-
 
 export default App;

@@ -1,6 +1,20 @@
 import { StyleSheet } from "react-native";
 
 export default StyleSheet.create({
+  settingsContainer: {
+    padding: 10,
+  },
+  settingsOption: {
+    backgroundColor: '#f2f2f2',
+    borderRadius: 10,
+    padding: 15,
+    marginTop: 10,
+  },
+  settingsText: {
+    fontSize: 18,
+    color: '#333',
+    // Add more styles as needed
+  },
   container: {
     flex: 1,
     backgroundColor: '#f2f2f2',

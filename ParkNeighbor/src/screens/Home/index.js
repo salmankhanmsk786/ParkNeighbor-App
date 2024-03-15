@@ -1,6 +1,6 @@
 import React from 'react'
-import { View, ImageBackground, Text, Pressable } from 'react-native'
-import styles from './styles'
+import { View, ImageBackground, Text, Pressable } from 'react-native';
+import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 import { useNavigation } from '@react-navigation/native';
 
@@ -11,7 +11,7 @@ const HomeScreen = (props) => {
   return (
     <View>
       <ImageBackground
-        source={require('../../../assets//images/wallpaper.jpg')}
+        source={require('../../../assets/images/wallpaper.jpg')}
         style={styles.image}>
 
         <Pressable
@@ -21,7 +21,7 @@ const HomeScreen = (props) => {
           <Text style={styles.searchButtonText}>Where are you going?</Text>
         </Pressable>
 
-        <Text style={styles.title}> ParkNeighbor</Text>
+        <Text style={styles.title}>ParkNeighbor</Text>
 
         <Pressable
           style={styles.button}
@@ -29,9 +29,9 @@ const HomeScreen = (props) => {
           <Text style={styles.buttonText}>Explore Nearby Parking</Text>
         </Pressable>
       </ImageBackground>
-
     </View>
-  )
-}
+  );
+};
 
 export default HomeScreen;
+
