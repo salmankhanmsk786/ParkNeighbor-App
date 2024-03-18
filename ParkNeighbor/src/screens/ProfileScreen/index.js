@@ -1,10 +1,21 @@
 import React from "react";
-import { View, Text, ScrollView, TouchableOpacity, Image } from "react-native";
+import { View, Text, ScrollView, TouchableOpacity, Image, Pressable } from "react-native";
 import styles from "./styles"; // Assuming styles are in a separate file
 import { useNavigation } from '@react-navigation/native';
+import {
+  withAuthenticator,
+  useAuthenticator
+} from '@aws-amplify/ui-react-native';
+import { generateClient } from 'aws-amplify/api';
+
+
+
 
 const ProfileScreen = ({ route }) => {
   const navigation = useNavigation();
+  const userSelector = (context) => [context.user];
+  
+  const { user, signOut } = useAuthenticator(userSelector);
 
   return (
     <ScrollView style={styles.container}>
@@ -13,8 +24,10 @@ const ProfileScreen = ({ route }) => {
           style={styles.profilePic}
           source={{ uri: 'https://via.placeholder.com/150' }}
         />
-        <Text style={styles.name}>John Doe</Text>
-        <Text style={styles.email}>johndoe@example.com</Text>
+
+        <Text style={styles.name}>{user.username}</Text>
+
+        <Text style={styles.email}>{user.email}</Text>
 
         {/* Additional Info */}
         <View style={styles.infoContainer}>
@@ -27,6 +40,12 @@ const ProfileScreen = ({ route }) => {
           <Text style={styles.buttonText}>Edit Profile</Text>
         </TouchableOpacity>
       </View>
+
+      <Pressable onPress={signOut} style={styles.logoutButton}>
+        <Text style={styles.logoutButtonText}>
+          Sign Out
+        </Text>
+      </Pressable>
 
       {/* Other sections can go here */}
     </ScrollView>

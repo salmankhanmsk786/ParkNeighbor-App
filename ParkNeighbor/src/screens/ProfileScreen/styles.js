@@ -55,4 +55,25 @@ export default StyleSheet.create({
     fontWeight: '500',
     textAlign: 'center',
   },
+
+  logoutButton: { // Add more styles here
+    backgroundColor: 'red', // Red color
+    borderRadius: 30,
+    marginTop: 20,
+    paddingVertical: 12,
+    paddingHorizontal: 30,
+    margin : 100,
+    alignItems : 'center',
+    bottom : 0,
+
+  },
+  logoutButtonText: { // Add more styles here
+    color: 'white',
+    fontSize: 18,
+    fontWeight: '500',
+    textAlign: 'center',
+  },
+  // Add more styles here
+
+
 });

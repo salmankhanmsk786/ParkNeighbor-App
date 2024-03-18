@@ -12,7 +12,6 @@ import PostScreen from "../screens/PostScreen";
 import ProfileScreen from "../screens/ProfileScreen";
 import PrevOrders from "../screens/PrevOrders";
 import SavedPosts from "../screens/SavedPosts";
-import ProfileScreen from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
